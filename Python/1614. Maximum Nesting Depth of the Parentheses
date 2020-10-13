@@ -1,0 +1,18 @@
+class Solution(object):
+    def maxDepth(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        
+        result = open_count = 0
+        
+        for char in s:
+            if char == '(':
+                open_count += 1
+            elif char == ')':
+                open_count -= 1   
+            elif open_count > result: 
+                result = open_count
+                
+        return result
