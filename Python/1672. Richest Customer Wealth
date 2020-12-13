@@ -1,0 +1,16 @@
+class Solution:
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
+
+#       One liner
+        return max(map(sum, accounts))
+
+
+#       longer version
+#        max = 0       
+#         for customer in accounts:
+#             wealth = 0            
+#             for account in customer:
+#                 wealth += account           
+#             if wealth > max:
+#                 max = wealth        
+#         return max
