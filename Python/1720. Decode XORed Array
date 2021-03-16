@@ -1,0 +1,13 @@
+class Solution(object):
+    def decode(self, encoded, first):
+        """
+        :type encoded: List[int]
+        :type first: int
+        :rtype: List[int]
+        """
+        
+        original = [first]
+        
+        for i in encoded:         
+            original.append(original[-1] ^ i)        
+        return original
