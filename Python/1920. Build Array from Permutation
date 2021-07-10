@@ -1,0 +1,26 @@
+class Solution:
+    def buildArray(self, nums: List[int]) -> List[int]:
+        
+        ans = [None] * len(nums)
+        
+        for i in nums:
+            ans[i] = nums[nums[i]]    
+            
+        return ans
+
+
+# Because of the contraints: 
+# 0 <= nums[i] < num.length
+# The elements in nums are distinct
+
+# We can also use modulo to do this in place using the same array which is O(1) space as well as O(n). Seems to be slower though when I submit it    
+    
+#         n = len(nums)
+    
+#         for i in range(0, len(nums)):
+#             nums[i] = nums[i] + (n * (nums[nums[i]] % n))
+        
+#         for i in range(0, len(nums)):
+#             nums[i] = int(nums[i] / n)
+            
+#         return nums
