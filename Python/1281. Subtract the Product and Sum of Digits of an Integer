@@ -6,7 +6,7 @@ class Solution:
         while n > 0:    # integer division rounds down
             product *= n % 10      # mod 10 gives the first digit place
             sum += n % 10
-            n = int(n/10)                 # dividing by 10 puts the 2nd digit in 1st place
+            n = n//10                # dividing by 10 puts the 2nd digit in 1st place
         
         return product - sum
     
