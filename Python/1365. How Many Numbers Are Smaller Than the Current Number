@@ -1,0 +1,16 @@
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        # smallerThan = []
+        # for i in range(0, len(nums)):
+        #     count = 0
+        #     for j in range(0, len(nums)):
+        #         if(nums[j] < nums[i]): count += 1
+        #     smallerThan.append(count)
+        # return smallerThan
+        
+        count = [0] * 102       # constraint of nums[i] <= 100
+        for num in nums:
+            count[num+1] += 1
+        for i in range(1, 102):
+            count[i] += count[i-1]
+        return [count[num] for num in nums]
