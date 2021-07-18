@@ -1,0 +1,30 @@
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        
+        jewelSet = set(jewels)
+
+        return sum(char in jewelSet for char in stones)
+
+    
+#       Alternative methods - 
+        
+#       Method 1
+
+#       return sum(map(stones.count, jewels))
+        
+#       Method 2 
+
+#         num = {}
+#         count = 0
+#         for char in stones:
+#             if char in num:
+#                 num[char] += 1
+#             else:
+#                 num[char] = 1
+        
+#         for char in jewels:
+#             if char in num: 
+#                 count += num[char]
+        
+#         return count
+        
