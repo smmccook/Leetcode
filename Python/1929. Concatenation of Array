@@ -1,0 +1,9 @@
+class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        # this solution is O(n)
+        
+        for i in range(0, len(nums)):
+            nums.append(nums[i])
+        return nums
+    
+        # return nums + nums  - this is O(n + m)
